@@ -8,6 +8,7 @@ using MikeRobbins.SPEAKDemo.Mapper;
 using MikeRobbins.SPEAKDemo.Models;
 using MikeRobbins.SPEAKDemo.Repositories;
 using MikeRobbins.SPEAKDemo.Utilties;
+using Sitecore.Services.Core;
 
 namespace MikeRobbins.SPEAKDemo.IoC
 {
@@ -18,6 +19,14 @@ namespace MikeRobbins.SPEAKDemo.IoC
             var builder = new ContainerBuilder();
 
             builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
+
+            builder.RegisterType<NewsCreator>().As<INewsCreator>();
+            builder.RegisterType<FieldUpdater>().As<IFieldUpdater>();
+            builder.RegisterType<NewsUpdater>().As<INewsUpdater>();
+            builder.RegisterType<NewsMapper>().As<INewsMapper>();
+            builder.RegisterType<NewsReader>().As<INewsReader>();
+            builder.RegisterType<SitecoreUtilities>().As<ISitecoreUtilities>();
+            builder.RegisterType<NewsArticleRepository>().As<IRepository<NewsArticle>>();
 
 
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
