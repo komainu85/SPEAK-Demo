@@ -9,7 +9,6 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
 
         initialized: function () {
             this.ListControl1.on("change:selectedItemId", this.ItemSelected, this);
-            this.GetNewsArticles();
         },
 
         initialize: function () {
@@ -22,22 +21,7 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
                 url: "/sitecore/api/ssc/MikeRobbins-EntityServiceDemo-Controllers/NewsArticles"
             });
 
-
             return newsService;
-        },
-
-
-
-        GetNewsArticles: function () {
-
-            var newsService = this.EntityServiceConfig();
-
-            var datasource = this.DataSource;
-
-            var result = newsService.fetchEntities().execute().then(function (newsArticles) {
-                datasource.viewModel.items(newsArticles);
-            });
-
         },
 
         ItemSelected: function () {
