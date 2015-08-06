@@ -18,16 +18,15 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
 
         EntityServiceConfig: function () {
             var newsService = new entityService({
-                url: "/sitecore/api/ssc/MikeRobbins-EntityServiceDemo-Controllers/NewsArticles"
+                url: "/sitecore/api/ssc/MikeRobbins-SPEAKDemo-Controllers/NewsArticles"
             });
 
             return newsService;
         },
 
         ItemSelected: function () {
-            if (!this.aeItemDetails.viewModel.isOpen()) {
-                this.aeItemDetails.viewModel.toggle();
-            }
+
+            this.tabs.viewModel.selectedTab('{6E50DD73-9E57-49ED-AA87-D500E945118F}');
 
             var newsService = this.EntityServiceConfig();
 
