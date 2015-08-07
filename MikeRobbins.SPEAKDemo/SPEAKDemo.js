@@ -35,15 +35,11 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
             var self = this;
 
             var result = newsService.fetchEntity(selectedId).execute().then(function (newsArticle) {
-
-                newsArticle.should.be.an.instanceOf(entityService.Entity);
-
                 self.tbID.viewModel.text(newsArticle.Id);
                 self.tbTitle.viewModel.text(newsArticle.Title);
                 self.tbDescription.viewModel.text(newsArticle.Description);
                 self.dpDate.viewModel.setDate(newsArticle.Date);
             });
-
         },
 
         UpdateArticle: function () {

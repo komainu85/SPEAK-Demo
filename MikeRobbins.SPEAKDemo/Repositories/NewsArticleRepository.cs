@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using MikeRobbins.SPEAKDemo.Interfaces;
 using MikeRobbins.SPEAKDemo.Models;
 using Sitecore.Data;
@@ -23,7 +24,7 @@ namespace MikeRobbins.SPEAKDemo.Repositories
 
         public IQueryable<NewsArticle> GetAll()
         {
-            return _iNewsReader.GetNewsArticles().AsQueryable();
+            throw new NotImplementedException();
         }
 
         public NewsArticle FindById(string id)

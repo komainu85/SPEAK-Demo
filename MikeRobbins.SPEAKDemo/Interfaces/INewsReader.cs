@@ -9,7 +9,6 @@ namespace MikeRobbins.SPEAKDemo.Interfaces
     {
         Item GetNewsItem(ID id);
         NewsArticle GetNewsArticle(ID id);
-        List<NewsArticle> GetNewsArticles();
         bool NewsAticleExists(NewsArticle newsArticle );
     }
 }
