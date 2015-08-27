@@ -37,7 +37,7 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
             var result = newsService.fetchEntity(selectedId).execute().then(function (newsArticle) {
                 self.tbID.viewModel.text(newsArticle.Id);
                 self.tbTitle.viewModel.text(newsArticle.Title);
-                self.tbDescription.viewModel.text(newsArticle.Description);
+                self.rtDescription.viewModel.text(newsArticle.Body);
                 self.dpDate.viewModel.setDate(newsArticle.Date);
             });
         },
@@ -51,7 +51,7 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
 
             newsService.fetchEntity(itemId).execute().then(function (newsArticle) {
                 newsArticle.Title = self.tbTitle.viewModel.text();
-                newsArticle.Description = self.tbDescription.viewModel.text();
+                newsArticle.Body = self.rtDescription.viewModel.text();
                 newsArticle.Date = self.DateFormatter(self.dpDate.viewModel.getDate());
 
                 newsArticle.on('save', function() {
@@ -83,7 +83,7 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
 
             var newsArticle = {
                 Title: this.tbTitle.viewModel.text(),
-                Description: this.tbDescription.viewModel.text(),
+                Body: this.rtDescription.viewModel.text(),
                 Date: this.dpDate.viewModel.getDate()
             };
 
@@ -99,14 +99,16 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
         },
 
         ArticleUpdated: function (self) {
-           self.messageBar.addMessage("notification", { text: "Item updated successfully", actions: [], closable: true, temporary: true });
-           self.ResetFields();
+            self.messageBar.addMessage("notification", { text: "Item updated successfully", actions: [], closable: true, temporary: true });
+            self.ResetFields();
+            this.tabs.viewModel.selectedTab('{C1300A65-8470-43E2-828B-583FF7163F7D}');
+            self.DataSource.refresh();
         },
 
         ResetFields: function () {
             this.tbID.viewModel.text("");
             this.tbTitle.viewModel.text("");
-            this.tbDescription.viewModel.text("");
+            this.rtDescription.viewModel.text("");
             this.dpDate.viewModel.setDate("");
         },
 

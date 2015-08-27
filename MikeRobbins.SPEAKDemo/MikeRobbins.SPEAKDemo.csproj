@@ -65,33 +65,22 @@
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Dlls.8.0.150427.8.0.150427\lib\Sitecore.ContentSearch.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Dlls.8.0.150427.8.0.150427\lib\Sitecore.ContentSearch.Linq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Sitecore.Kernel, Version=8.0.5138.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Dlls.8.0.150427.8.0.150427\lib\Sitecore.Kernel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Sitecore.Services.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.1.0.0\lib\Sitecore.Services.Client.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sitecore.Services.Client">
+      <HintPath>..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Services.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.1.0.0\lib\Sitecore.Services.Core.dll</HintPath>
+      <HintPath>..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Services.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Services.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.1.0.0\lib\Sitecore.Services.Infrastructure.dll</HintPath>
+      <HintPath>..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Services.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Services.Infrastructure.Sitecore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.1.0.0\lib\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sitecore.Services.Infrastructure.Sitecore">
+      <HintPath>..\..\..\..\inetpub\wwwroot\MikeRobbins8u4\Website\bin\Sitecore.Services.Infrastructure.Sitecore.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />

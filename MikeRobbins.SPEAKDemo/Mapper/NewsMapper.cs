@@ -13,7 +13,7 @@ namespace MikeRobbins.SPEAKDemo.Mapper
             var dateField = (Sitecore.Data.Fields.DateField)item.Fields["Date"];
 
             newsArticle.Title = item["Title"];
-            newsArticle.Description = item["Description"];
+            newsArticle.Body = item["Body"];
             newsArticle.Date = dateField.DateTime;
             newsArticle.itemId = item.ID.ToString();
             newsArticle.Id = item.ID.ToString();
