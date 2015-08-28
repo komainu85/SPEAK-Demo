@@ -73,7 +73,7 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
             var result = newsService.fetchEntity(itemId).execute().then(function (newsArticle) {
                 newsArticle.destroy().then(function () {
                     self.messageBar.addMessage("notification", { text: "Item deleted successfully", actions: [], closable: true, temporary: true });
-                    self.GetNewsArticles();
+                    ResetDisplay();
                 });
             });
         },
@@ -101,8 +101,7 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
         ArticleUpdated: function (self) {
             self.messageBar.addMessage("notification", { text: "Item updated successfully", actions: [], closable: true, temporary: true });
             self.ResetFields();
-            this.tabs.viewModel.selectedTab('{C1300A65-8470-43E2-828B-583FF7163F7D}');
-            self.DataSource.refresh();
+            ResetDisplay();
         },
 
         ResetFields: function () {
@@ -119,6 +118,11 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
             else {
                 this.UpdateArticle();
             }
+        },
+
+        ResetDisplay: function() {
+            this.tabs.viewModel.selectedTab('{C1300A65-8470-43E2-828B-583FF7163F7D}');
+            self.DataSource.refresh();
         },
 
         DateFormatter: function (now) {
