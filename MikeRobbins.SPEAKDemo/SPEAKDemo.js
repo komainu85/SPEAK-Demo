@@ -54,7 +54,7 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
                 newsArticle.Body = self.rtDescription.viewModel.text();
                 newsArticle.Date = self.DateFormatter(self.dpDate.viewModel.getDate());
 
-                newsArticle.on('save', function() {
+                newsArticle.on('save', function () {
                     self.ArticleUpdated(self);
                 });
 
@@ -91,16 +91,17 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
 
             newsService.create(newsArticle).execute().then(function (newArticle) {
                 self.messageBar.addMessage("notification", { text: "Item created successfully", actions: [], closable: true, temporary: true });
-                self.ResetDisplay();
+                self.ResetFields();
+                self.ResetDisplay(self);
             }).fail(function (error) {
-                self.messageBar.addMessage("error", { text:  error.message, actions: [], closable: true, temporary: true });
+                self.messageBar.addMessage("error", { text: error.message, actions: [], closable: true, temporary: true });
             });
         },
 
         ArticleUpdated: function (self) {
             self.messageBar.addMessage("notification", { text: "Item updated successfully", actions: [], closable: true, temporary: true });
             self.ResetFields();
-            ResetDisplay();
+            self.ResetDisplay(self);
         },
 
         ResetFields: function () {
@@ -119,8 +120,8 @@ define(["sitecore", "jquery", "underscore", "entityService"], function (Sitecore
             }
         },
 
-        ResetDisplay: function() {
-            this.tabs.viewModel.selectedTab('{C1300A65-8470-43E2-828B-583FF7163F7D}');
+        ResetDisplay: function (self) {
+            self.tabs.viewModel.selectedTab('{C1300A65-8470-43E2-828B-583FF7163F7D}');
             self.DataSource.refresh();
         },
 
